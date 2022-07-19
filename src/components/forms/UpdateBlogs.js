@@ -23,7 +23,7 @@ const UpdateBlogs = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:5000/todos/${id}`,blogs,{
+        axios.put(`http://localhost:5000/blogs/${id}`,blogs,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }
@@ -55,7 +55,7 @@ const UpdateBlogs = (props) => {
           type="text"
           id="blogs_title"
           name="blogs_title"
-          value={formData.blogs_title}
+          value={blogs.blogs_title}
           onChange={(e) =>
             setBlogs({ ...blogs, [e.target.id]: e.target.value })
           }
@@ -70,7 +70,7 @@ const UpdateBlogs = (props) => {
             type="text"
             id="blogs_content"
             name="blogs_content"
-            value={formData.blogs_content}
+            value={blogs.blogs_content}
             onChange={(e) =>
                 setBlogs({ ...blogs, [e.target.id]: e.target.value })
             }

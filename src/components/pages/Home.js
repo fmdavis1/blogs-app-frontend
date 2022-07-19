@@ -1,12 +1,13 @@
 import NavBar from "../layout/NavBar";
 import CreateBlogs from "../forms/CreateBlogs"
 import {useEffect, useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import axios from "axios"
 
 const Home = (props) => {
 
   const [blogs, setBlogs] = useState(null);
-
+  const history = useHistory()
   useEffect(() => {
     axios
       .get("http://localhost:5000/blogs", {
@@ -31,6 +32,9 @@ const Home = (props) => {
       })
       .catch((err) => console.error(err));
   };
+  const handleUpdate = (blog) => {
+    history.push(`/update/${blog._id}`)
+  }
 
   return (
     <div>
@@ -50,11 +54,18 @@ const Home = (props) => {
               {blog.user === props.user._id && (
                 <span
                   className="btn btn-danger"
+                  style={{marginRight: '5px'}}
                   onClick={() => handleDelete(blog)}
                 >
                   x
                 </span>
               )}{" "}
+               <span
+                  className="btn btn-info"
+                  onClick={() => handleUpdate(blog)}
+                >
+                  Update
+                </span>
             </h6>
           </div>
         ))}
