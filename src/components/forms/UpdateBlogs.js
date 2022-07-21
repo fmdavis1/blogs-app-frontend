@@ -9,7 +9,7 @@ const UpdateBlogs = (props) => {
     const history = useHistory()
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/blogs/${id}`,{
+        axios.get(`https://fmd-blog-app.herokuapp.com/blogs/${id}`,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken'),
         },
@@ -23,7 +23,7 @@ const UpdateBlogs = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:5000/blogs/${id}`,blogs,{
+        axios.put(`https://fmd-blog-app.herokuapp.com/${id}`,blogs,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }
