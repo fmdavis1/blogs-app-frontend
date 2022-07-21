@@ -9,7 +9,7 @@ const CreateBlogs = (props) => {
     })
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/blogs',formData,{
+        axios.post('https://fmd-blog-app.herokuapp.com/blogs',formData,{
         headers:{
             'x-auth-token': localStorage.getItem('userToken')
         }

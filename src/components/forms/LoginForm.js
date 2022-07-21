@@ -29,7 +29,7 @@ const history = useHistory()
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
-    axios.post('http://localhost:5000/auth', formData)
+    axios.post('https://fmd-blog-app.herokuapp.com/auth', formData)
             .then((res) => {console.log(res.data)
        if(res.data.token && res.data.user ){
         localStorage.setItem('userToken', res.data.token)

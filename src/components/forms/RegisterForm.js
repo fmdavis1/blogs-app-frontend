@@ -13,7 +13,7 @@ const history = useHistory()
     const handleSubmit = e => {
         e.preventDefault()
         console.log(formData)
-    axios.post('http://localhost:5000/users', formData)
+    axios.post('https://fmd-blog-app.herokuapp.com/users', formData)
             .then(
         res => {console.log(res.data)
         localStorage.setItem('userToken', res.data.token)
