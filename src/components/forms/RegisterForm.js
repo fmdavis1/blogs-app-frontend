@@ -9,21 +9,6 @@ const history = useHistory()
         password: ''
     })
 
-    // const [username, setUsername] = useState(')
-//     const handleSubmit = async(e) => {
-//         e.preventDefault()
-//             console.log(formData)
-// try {
-//     const res = await axios.post('http://localhost:5000/users', formData)
-//             .then(
-//         res => console.log(res))
-        
-            
-//         } catch (error) {
-//             console.error(error)
-            
-//         }
-//     }
 
     const handleSubmit = e => {
         e.preventDefault()

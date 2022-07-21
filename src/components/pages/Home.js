@@ -43,13 +43,13 @@ const Home = (props) => {
 
       <CreateBlogs setBlogs={setBlogs} blogs={blogs} />
     
-
+      BLOGS
       {blogs &&
         blogs.map((blog) => (
           <div key={blog._id}>
-            <h6>{blog.created_by}</h6>
-            <h6>{blog.blogs_title}</h6>
-            <h6>
+              <h6>Name: {blog.created_by}</h6>
+            <h6>Title: {" "}{blog.blogs_title}</h6>
+            <h6>Content:{" "}
               {blog.blogs_content}{" "}
               {blog.user === props.user._id && (
                 <span

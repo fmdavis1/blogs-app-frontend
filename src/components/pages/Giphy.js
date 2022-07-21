@@ -18,8 +18,9 @@ const Giphy = (props) => {
         {giphys && (
          <div>
           
-   <h2>{giphys.data[0].title}</h2> 
+   <h5>{giphys.data[0].title}</h5> 
   <img src={giphys.data[0].images.original.url} alt={giphys.data[0].title} />
+  <br/>
          </div>
         )}
       </div>

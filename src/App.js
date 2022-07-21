@@ -3,7 +3,6 @@ import {Route, Switch} from 'react-router-dom'
 import {useState} from 'react'
 import Landing from './components/pages/Landing'
 import Home from './components/pages/Home'
-import About from './components/pages/About'
 import UpdateBlogs from './components/forms/UpdateBlogs';
 import Giphy from './components/pages/Giphy'
 
@@ -19,7 +18,6 @@ function App() {
             <Switch>
               <Route exact path='/' render={routerProps => <Landing {...routerProps} setUser={setUser} /> }/>
               <Route  path='/home' render={routerProps => <Home {...routerProps} user={user} setUser={setUser}/>}/>
-              <Route  path='/about' component={About}/>
               <Route path='/update/:id' component={UpdateBlogs}/>
             </Switch>
     </div>

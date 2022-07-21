@@ -1,10 +1,36 @@
-# Getting Started with Create React App
+# BLOG_API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is a blog API with full Create, Read, Update, and Delete(CRUD) functionality being rendered using React.js. 
 
-## Available Scripts
+### Tech Stack
 
-In the project directory, you can run:
+The Frontend
+- React.js
+
+In the Backend
+- Server: Node.js, Express.js
+- Database: MongoDB
+- Deploy: Heroku
+
+
+### RUN LOCALLY
+Clone the project and follow all steps and have all dependencies to run the project locally.
+
+frontend:
+git clone https://github.com/fmdavis1/blogs-app-frontend
+
+backend:
+git clone https://github.com/fmdavis1/blog_api
+
+### Install dependencies
+
+ npm i:
+
+- react-router-dom
+- axios
+- bootstrap
+
 
 ### `npm start`
 
@@ -14,57 +40,83 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### ROUTES
+- '/'  Landing Page
+- '/home' Home Page
+- '/Update/:id'  Update Blog by Id
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Wireframe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Made with Draw.io
+![BlogsAppDiagram](../blogs-frontend/src/Image/BlogsAppDiagram.png)
 
-### `npm run eject`
+### Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- To run backend uses Port 5000 as follows: http://localhost:5000 and add endpoints
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- server app.get('/')return message "Server is running"
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- usersRouter.post('/auth'): Creates Login.Login with username and password only. Token is sent to header for furher access.
+- /auth
+        - Login
+            - CREATE
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- usersRouter.post('/users')Registers users, usersSchema is used. Password is hashed. Token sent to headers for further access.
+- /users
+        - CREATE
+            - Registration
+        - READ
+            - Get users
+        - UPDATE
+            - Update user
+        - DELETE
+            - Delete user
+        
 
-## Learn More
+Blog('/blogs')
+router.get('/blogs'): all public blog and private blogs are included, must be logged in and have a token.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+router.post('/blogs'): Creates Blog with blogsSchema. Must have a token
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+router.put('/blogs/:id'): Updates blog with id, parameter(String) id is needed to update blog. Must have a token
 
-### Code Splitting
+router.get('/blogs/:id'): Returns blog associcated to id, parameter(String) id is required to find blog. Only blog associated with id appears. Must have a token
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+router.delete('/blogs/:id): Deletes blog associated with id, need a token for Authorization and parameter(string) id is required to delete blog
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- /blogs
+    - full CRUD
+        - CREATE
+            -Create blog
+        - READ
+            - Get blogs
+        - READ BY ID
+            - Get blog by id
+        - UPDATE
+            - Update blog
+        - DELETE
+            -Delete blog
 
-### Making a Progressive Web App
+### SCHEMAS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+###  Blog Schema:
+- username: type: String, required: true
+- created_by: type: String, required: true,
+- created_at:type:String,
+- blog_title:type:String, required: true
+- private:type:Boolean,default false
 
-### Advanced Configuration
+### User Schema:
+- username:type:String,required:true,
+- email:type:String,required:true,
+- birthday:date,
+- age:number,
+- password:String:required:true
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Deploy
+- Deployed to Heroku
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
