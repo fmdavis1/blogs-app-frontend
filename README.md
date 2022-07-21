@@ -1,7 +1,7 @@
 # BLOG_API
 
 ## Description
-This is a blog API with full Create, Read, Update, and Delete(CRUD) functionality being rendered using React.js. 
+This is a blog API with full Create, Read, Update, and Delete(CRUD) functionality being rendered using React.js and deployed to Netlify. 
 
 ### Tech Stack
 
@@ -55,7 +55,7 @@ Made with Draw.io
 
 ### Endpoints
 
-- To run backend uses Port 5000 as follows: http://localhost:5000 and add endpoints
+- 
 
 - server app.get('/')return message "Server is running"
 
@@ -118,5 +118,5 @@ router.delete('/blogs/:id): Deletes blog associated with id, need a token for Au
 - password:String:required:true
 
 ### Deploy
-- Deployed to Heroku
+- Deployed to Netlify: https://fmdblogappfrontend.netlify.app/
 
