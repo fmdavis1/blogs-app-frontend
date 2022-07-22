@@ -1,7 +1,7 @@
-# BLOG_API
+# BLOG_APP_FRONTEND
 
 ## Description
-This is a blog API with full Create, Read, Update, and Delete(CRUD) functionality being rendered using React.js and deployed to Netlify. 
+This is a blog App with full Create, Read, Update, and Delete(CRUD) functionality being rendered using React.js and deployed to Netlify. Netlify address: https://fmdblogappfrontend.netlify.app/
 
 ### Tech Stack
 
